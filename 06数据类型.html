@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            数据类型指的是字面量的类型
+                在JS中一共有六种数据类型
+                    String 字符串
+                    Number 数值
+                    Boolean 布尔值
+                    Null 空值
+                    Undefined 未定义
+
+                    Object 对象
+                
+                其中前五种为基本数据类型，Object为引用数据类型
+        */
+
+        /*
+            String字符串
+                - 在JS中字符串需要使用引号引起来
+                - 使用双引号和单引号都可以，但是不要混着用
+        */
+
+        var str = "hello";
+
+        str = '他说："我是xxx"';
+
+        /*
+            在字符串中我们可以使用\作为转义字符，
+            当表示一些特殊符号时可以使用转义字符
+
+            \" 表示 "
+            \' 表示 '
+            \n 表示换行
+            \t 制表符
+            \\ 表示 \
+        */
+        document.write(str);
+        console.log(str);
+        //alert("你好\n我是")
+        
+        /*
+            在JS中所有的数值都是Number类型，
+            包括整数和浮点数（小数）
+
+            JS中可以表示的数字的最大值
+                Number.MAX_VALUE
+                1.7976931348623157e+308
+                Number.MIN_VALUE 最小的正值
+            如果使用number表示的数字超过了最大值，则会返回Infinity，无穷大
+                Infinity也是number类型
+            
+            NaN也是一个特殊的数字，表示 Not a Number（不是一个数字）
+            */
+        var c = 1.234;  //数字
+        var d = "1.234" //字符串
+        document.write(c);
+        /*
+            可以使用一个运算符 typeof 来检查一个变量的类型
+                语法 typeof 变量
+                 字符串返回 string
+                 数值返回 number
+        */
+        console.log(typeof d);
+
+        /*
+            
+            如果使用JS进行浮点数运算，可能得到一个不精确的结果
+            所以千万不要使用JS进行对精确度要求较高的运算
+        
+        */
+
+        /*
+            布尔值
+                 布尔值只有两个，用于逻辑判断
+                 true - 真
+                 false - 假
+
+        */
+
+        /*
+            Null类型的值只有一个，就是null
+                null这个值专门用来表示一个为空的对象
+                使用typeof检查一个null值时，会返回object
+
+            Undefined类型的值只有一个，就是undefined
+                当声明一个变量，不赋值时，它的值就是undefined
+                使用typeof检查一个undefined值时，会返回undefined
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
