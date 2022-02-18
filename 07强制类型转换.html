@@ -85,6 +85,22 @@
         */
         p = null
         document.write('\np='+p);
+
+        /*
+            转换为Boolean
+                - 使用Boolean()函数
+                    数字 --> Boolean
+                        除了0和NaN，其余的都是true
+                    字符串 --> Boolean
+                        除了空串，其余都是false
+                    
+                    null和undefined都会转换为false
+        */
+        a = 123;
+        a = Boolean(a);
+        document.write('\na='+a);
+
+
     </script>
 </head>
 <body>
