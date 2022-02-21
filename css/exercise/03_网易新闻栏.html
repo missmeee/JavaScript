@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻列表</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+          }
+          div.news-list{
+              margin-top: 27px;
+              width: 300px;
+              height: 324px;
+              border-top: 1px #ddd solid;
+          }
+          a{
+            text-decoration: none;
+          }
+          .news-title{
+            display: inline-block;
+            border-top: 1px #f34540 solid ;
+            height: 24px;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            padding-top: 6px;
+            margin-top: -1px;
+            padding-bottom: 10px;
+            
+          }
+          .news-title a{
+            color:rgb(64,64,64) ;
+          }
+          .news-img{
+              opacity: 1;
+              display: inline;
+              height: 150px;
+              
+          }
+          h3{
+              color: #fff;
+              margin-top: -34px;
+              font-size: 16px;
+              padding-left: 30px; 
+              margin-bottom: 14px;    
+          }
+          .news li{
+            margin-bottom: 9px;
+          }
+          .news li a{
+              font-size: 12px;
+              margin-left: 4px;
+              color: #666666;
+              
+          }
+          .news li::before{
+              content: '◼';
+              font-size: 2px;
+              color: #c7c4c4;
+          }
+          .news li a:hover{
+              color: red;
+          }
+          .news-list h2 a:hover{
+            color: red;
+          }
+    </style>
+</head>
+<body>
+    <div class="news-list">
+        <h2 class="news-title">
+            <a href="http://">体育</a>
+        </h2>
+        <div class="news-img">
+            <a href="">
+                <img src="https://cms-bucket.ws.126.net/2021/1130/abb448d3p00r3dy92001cc0008c005kc.png?imageView&thumbnail=300y150&type=webp" alt="">
+                <h3>
+                    笑不活了！樊振东采访时肚子咕咕叫
+                </h3>
+            </a>
+        </div>
+        <ul class="news">
+            <li>
+                <a href="">金球奖最意外逆袭!34岁的他首次杀进前四</a>
+            </li>
+            <li>
+                <a href="">以史为鉴：西蒙斯和欧文，还能挺多久？</a>
+            </li>
+            <li>
+                <a href="">陈梦女双哑火，进攻被伊藤套牢，中国组合输得不冤</a>
+            </li>
+            <li>
+                <a href="">吊打混血归化日本队 杜锋可算把男篮带明白了</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

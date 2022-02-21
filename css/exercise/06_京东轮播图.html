@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="head">
+        <div class="img-list">
+            <a href="url">
+                <img
+                    src='https://img12.360buyimg.com/pop/s1180x940_jfs/t1/212645/33/10497/93260/61dad704E8c77a0fe/39e0a8f9063a04b3.jpg.webp'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://imgcps.jd.com/ling4/100016514918/5LyB5Lia5pqW5b-D5a2j/5bm06IqC56S855uSMuS7tjXmipg/p-5bd8253082acdd181d02fa6d/2bed7437/cr/s/q.jpg'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://imgcps.jd.com/ling4/100013209930/54iG5qy-55u06ZmN/6YOo5YiG5q-P5ruhMTk55YePMTAw/p-5bd8253082acdd181d02f9e8/e4acfc85/cr/s/q.jpg'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://imgcps.jd.com/img-cubic/creative_server_cia_jdcloud/v2/2000366/100012689430/FocusFullshop/CkNqZnMvdDEvMTg2OTY5LzUvMTIzNDYvMzE4NTk4LzYwZTY5NDIxRTNjMWU1ODMwLzQ3ZmNhMTc4ZGY0ZjMxMDYucG5nEgkzLXR5XzBfNTQwAjjui3pCEAoM5a655aOw5Yaw566xEABCFgoS5byA5ZCv5bSt5paw55Sf5rS7EAFCEAoM56uL5Y2z5oqi6LStEAJCCgoG5LyY6YCJEAdYlpDiyfQC/cr/s/q.jpg'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://imgcps.jd.com/img-cubic/creative_server_cia_jdcloud/v2/2000366/100013235052/FocusFullshop/CkRqZnMvdDEvMTc2ODg5LzI4LzEzMjU0LzU3NDQ2Ny82MGU2YTJkYUU5YzMwNDUxOC81NzNhM2NhODFhNGI2OGU4LnBuZxIJMi10eV8wXzUzMAI47ot6QhMKD-WknOiOuumTgeS4nee9kRAAQhAKDOeJqee-juS7t-W7iRABQhAKDOeri-WNs-aKoui0rRACQgoKBui2heWAvBAHWOy2g8r0Ag/cr/s/q.jpg'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://img11.360buyimg.com/pop/s1180x940_jfs/t1/164624/19/27258/87795/61d6bf1aE2b51b1bc/ef2e1f5e4589d3b7.jpg.webp'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://img12.360buyimg.com/babel/s1180x940_jfs/t1/101065/22/21449/176498/61d6f5c4Eb2de8f6e/00e2df6fb2977a65.jpg.webp'>
+            </a>
+            <a href="url">
+                <img
+                    src='https://imgcps.jd.com/img-cubic/creative_server_cia_jdcloud/v2/2000366/100003851556/FocusFullshop/CkNqZnMvdDEvMjExNTcyLzQwLzE0MTkwLzcyOTA2LzYxYzk3ODhmRTJiNDlmZmRjLzNjMzc3YTg3ZTJmYzAzMTAuanBnEgo5OTktdHlfMF8xMAE47ot6WKTaxsX0Ag/cr/s/q.jpg'>
+            </a>
+        </div>
+
+        <div class="point">
+            <a href="url"></a>
+            <a class="active" href="url"></a>
+            <a href="url"></a>
+            <a href="url"></a>
+            <a href="url"></a>
+            <a href="url"></a>
+            <a href="url"></a>
+            <a href="url"></a>
+        </div>
+    </div>
+</body>
+<style>
+    .head {
+        position: relative;
+        margin: 0 auto;
+        width: 579px;
+        height: 470px;
+    }
+
+
+    .img-list img {
+        position: absolute;
+        margin: auto;
+        width: 579px;
+
+    }
+
+    .point a {
+        margin: 0 3px;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        background-color: rgba(238, 229, 229,0.4);
+        float: left;
+        /* 将背景颜色设置到内容区，边框和内边距不再有背景颜色 */
+        background-clip: content-box; 
+        border: 3px solid transparent;
+    }
+
+    .point a:hover{
+        background-color: rgb(255, 255, 255);
+        border: 3px solid rgba(255, 255, 255, 0.4);
+
+    }
+    .head div.point{
+        position: absolute;
+        z-index: 999;
+        bottom: 30px;
+        left:30px;
+    }
+</style>
+
+</html>
