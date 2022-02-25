@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		
+		// 1. 创建一个函数对象
+		
+		// var fun = new Function("console.log('hello,这是一个函数')");
+		
+		//封装到函数中的代码不会立即执行，会在调用的时候执行
+		// fun();
+		
+		
+		/*
+			2. 使用函数声明来创建一个函数
+			
+			语法：
+				function 函数名([形参1,形参2...]){
+					语句...
+				}
+		*/ 
+	   
+	   // function fun2(){
+		  //  console.log('这是第二个函数');
+		  //  alert('hhh');
+	   // }
+	   // fun2();
+	   
+	   /*
+			3.使用函数表达式来创建函数
+			
+			var 函数名 = function([形参1,形参2...]){
+				语句...
+			}
+	   */ 
+	  
+	  // var fun3 = function(){
+		 //  console.log('这是第三个函数');
+	  // };
+	  // fun3()
+	  
+	  //定义一个函数，计算一个圆的半径，并返回计算结果
+	  
+	  function circle(r){
+		  return 3.14*r*r;
+	  }
+	  
+	  console.log('面积：'+ circle(121))
+	  
+	  function sayHello(o){
+	  	console.log('我是'+o.name+',今年我'+o.age+'岁了,我是一个'+o.gender+'人,我住在'+o.address);
+	  	
+	  }
+	  
+	  var obj={
+	  	name : '孙悟空',
+	  	age : 18,
+	  	address : '花果山',
+	  	gender : '男'
+	  };
+	  
+	  sayHello(obj);
+	</script>
+	<body>
+	</body>
+</html>

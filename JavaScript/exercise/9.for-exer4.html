@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		//在页面接受一个数字，判断该数是否为质数
+		//质数：一个数只能被1和它自身整除的数，且必须大于1.
+		while(true){
+			var num = prompt('请输入一个大于1的整数：');
+			if(0 == num - parseInt(num) && num>1){
+				break
+			}
+			alert('输入错误请重新输入！')
+		}	
+		var flag = true;
+		for(i = 2; i<num; i++){
+			if(num%i == 0){
+				alert('这不是质数！');
+				flag = false;
+				break;
+			}
+		}
+		if(flag == true){
+			alert('这是质数！')
+		}
+	</script>
+	<body>
+	</body>
+</html>
