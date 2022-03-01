@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		
+		function Person(name,age,gender){
+			this.name=name;
+			this.age=age;
+			this.gender=gender;
+			this.sayName = function(){
+				alert('hello,我是'+this.name)
+			}
+		}
+		
+		function Dog(name,age){
+			this.name=name;
+			this.age=age;
+			this.sayAge = function(){
+				alert('hello,我'+this.age+'岁了')
+			}
+		}
+		
+		var per1 = new Person('孙悟空','17','男');
+		var dog = new Dog('旺财','3');
+		console.log(per1.sayName());
+		console.log(dog.sayAge());
+	</script>
+	<body>
+	</body>
+</html>
