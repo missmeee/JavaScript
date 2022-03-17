@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../../css/clean/reset.css"/>
+	<style type="text/css">
+	
+		div#total{
+			float: left;
+			margin-left: 400px;
+			width: 350px;
+		}
+		
+		div.inner{
+			border: 1px #000000 solid;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+		div.inner p{
+			margin: 15px 0; 
+			margin-left: 5px;
+		}
+		
+		ul li{
+			background-color: #8ef090;
+			border: 1px #000000 solid;
+			float: left;
+			margin: 5px 10px;
+		}
+		div#btnList{
+			float: right;
+			margin-right: 400px;
+			border: #000000 1px solid;
+			padding: 15px;
+		}
+		
+		div button{
+			width: 300px;
+			margin-top: 10px;
+		}
+		
+		.clearfix::after,
+		.clearfix::before{
+		    content: '';
+		    display: table;
+		    clear: both;
+		}
+	</style>
+	<body>
+		<div id="total">
+			<div class="inner clearfix">
+				<p>你喜欢哪个城市？</p>
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+				
+				<br>
+			</div>
+		</div>
+		<div id="btnList">
+			<div><button id="btn01" type="button">创建一个“广州”节点</button></div>
+			<div><button id="btn02" type="button">将“广州”节点插入到#bj前面</button></div>
+			<div><button id="btn03" type="button">使用“广州”节点替换#bj节点</button></div>
+			<div><button id="btn04" type="button">删除#bj节点</button></div>
+			<div><button id="btn05" type="button">读取#city内的HTML代码</button></div>
+			<div><button id="btn06" type="button">设置#bj内的HTML代码</button></div>
+			<div><button id="btn07" type="button">创建一个“广州”节点</button></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function myClick(id,fun){
+			var btn = document.getElementById(id);
+			btn.onclick = fun;
+		}
+		/*=========================创建广州节点===============================*/
+		myClick("btn01",function(){
+
+			
+			var newLi = document.createElement("li"); //创建一个li元素
+			var text = document.createTextNode("广州"); //创建文本节点
+			
+			/*
+				appendChild()
+					向一个父节点添加一个子节点
+			*/
+		   newLi.appendChild(text);
+		   
+			//广州节点加入city
+			var city = document.getElementById("city");
+			city.appendChild(newLi);
+		})
+		
+		
+		/*=========================将广州节点加入#bj前面===============================*/
+
+		myClick("btn02",function(){
+			var bj = document.getElementById("bj");
+			//创建广州节点
+						
+						var newLi = document.createElement("li"); //创建一个li元素
+						var text = document.createTextNode("广州"); //创建文本节点
+						
+						/*
+							appendChild()
+								向一个父节点添加一个子节点
+						*/
+			newLi.appendChild(text);
+			
+			/*
+				insertBefore()
+					可以在指定的子节点前插入新的子节点
+					语法：
+						父节点.insertBefore(新节点,旧节点)
+			*/
+		   var city = document.getElementById("city");
+			city.insertBefore(newLi,bj);
+			
+		})
+		
+		
+		/*========================使用广州节点替换bj节点=================================*/
+		
+		myClick("btn03",function(){
+			//创建广州节点
+						
+						var newLi = document.createElement("li"); //创建一个li元素
+						var text = document.createTextNode("广州"); //创建文本节点
+						
+						/*
+							appendChild()
+								向一个父节点添加一个子节点
+						*/
+			newLi.appendChild(text);
+			
+			var bj = document.getElementById("bj");
+			var city = document.getElementById("city");
+			city.replaceChild(newLi,bj);
+			//bj.replaceNode(newLi);
+		})
+		
+		/*========================删除bj节点=================================*/
+		
+		myClick("btn04",function(){
+			var bj = document.getElementById("bj");
+			var city = document.getElementById("city");
+			
+			//city.removeChild(bj);
+			bj.parentNode.removeChild(bj);
+		})
+		
+		/*========================读取city内的html代码=================================*/
+		myClick("btn05",function(){
+			var city = document.getElementById("city");
+			
+			alert(city.innerHTML);
+		})
+		/*========================修改bj内的html代码=================================*/
+		myClick("btn06",function(){
+			var bj = document.getElementById("bj");
+			bj.innerHTML = '上海';
+			alert(bj.innerHTML);
+		})
+		
+		myClick("btn07",function(){
+			var city = document.getElementById("city");
+			city.innerHTML = city.innerHTML+"<li>上海</li>";
+			//alert(bj.innerHTML);
+		})
+		
+	</script>
+</html>

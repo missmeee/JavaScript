@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="text">
+			
+		</h1>
+	</body>
+	<script type="text/javascript">
+		var text = document.getElementById("text");
+		var i = 0;
+		var time = setInterval(function(){
+			text.innerHTML = i++;
+			
+			if(i == 11){
+				clearInterval(time);
+			}
+		},1000);
+
+		
+		/*
+			setInterval()
+				- 定时调用
+				- 可以将一个函数，每隔一段时间调用一次
+				- 参数：
+					1. 回调函数，每隔指定时间调用一次
+					2. 时间间隔
+				- 返回值：
+					返回Number类型的数据，整个数字用来作为定时器的唯一标识
+		*/
+	   
+	   // clearInterval()可以用来关闭定时器，参数为setInterval()的返回值
+	   
+	</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#bigBox {
+			background-color: #00A4EA;
+			width: 300px;
+			height: 300px;
+		}
+
+		span {
+			background-color: #228B22;
+		}
+	</style>
+	<body>
+		<div id="bigBox">
+			我是box里的
+			<span id="text">
+				我是span里的
+			</span>
+		</div>
+
+		<button id="btn">添加超链接</button>
+		<ul id="u1">
+			<li><a href="#" class="link">超链接一</a></li>
+			<li><a href="#" class="link">超链接二</a></li>
+			<li><a href="#" class="link">超链接三</a></li>
+			<li><a href="#" class="link">超链接四</a></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var span = document.getElementById("text");
+		var bigbox = document.getElementById("bigBox");
+
+
+		span.onclick = function(event) {
+			alert("我是span里的");
+			//取消冒泡
+			//cancelBubble = true
+			event.cancelBubble = true;
+		}
+		bigbox.onclick = function(event) {
+			alert("我是bigbox里的");
+			event.cancelBubble = true;
+		}
+		document.body.onclick = function() {
+			//alert("我是body里的");
+		}
+
+		/*
+			事件的委派
+				- 值将事件统一绑定给元素的共同祖先元素，这样后代元素触发时，可以冒泡到祖先元素
+					从而通过祖先元素的响应函数来处理事件
+				- 事件的委派利用了冒泡。通过委派可以减少事件绑定的次数，提供程序性能
+		*/
+	   var u1 = document.getElementById("u1");
+	   var btn = document.getElementById("btn");
+	   
+	   btn.onclick = function(){
+		   var li = document.createElement("li");
+		   li.innerHTML = "<a  href='#'>新添加的超链接</a>"
+		   u1.appendChild(li);
+	   }
+	   
+	   u1.onclick = function(event){
+		   //alert(event.target.tagName);
+		   //如果触发事件的对象是我们期望的元素，则执行否则不执行
+		   //target  返回触发此事件的元素
+		   if(event.target.tagName == "A"){
+			   alert("我是ul");
+		   }
+		   
+	   }
+	</script>
+</html>

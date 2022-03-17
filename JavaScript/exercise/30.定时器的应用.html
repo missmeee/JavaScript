@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="toos.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: #00A4EA;
+			position: absolute;
+			left: 0px;
+		}		
+		#box2{
+			width: 100px;
+			height: 100px;
+			background-color: #ea993c;
+			position: absolute;
+			left: 0px;
+			top: 200px;
+		}
+		#line{
+			width: 1px;
+			height: 600px;
+			background-color: #000000;
+			position: absolute;
+			top: 0px;
+			left: 800px;
+		}
+	</style>
+	<body>
+		<button id="btn01" type="button">box1向右移动</button>
+		<button id="btn02" type="button">box1向左移动</button>
+		<button id="btn03" type="button">box2向右移动</button>
+		<button id="btn04" type="button">test</button>
+		<br><br>
+		<div id="box1">box1</div>
+		<div id="box2">box2</div>
+		<div id="line"></div>
+	</body>
+	<script type="text/javascript">
+		var btn1 = document.getElementById("btn01");
+		var btn2 = document.getElementById("btn02");
+		var btn3 = document.getElementById("btn03");
+		var btn4 = document.getElementById("btn04");
+		var box1 = document.getElementById("box1");
+		var box2 = document.getElementById("box2");
+		//var left;
+		var timer;
+		btn1.onclick = function(){
+			move(box1,"left",3,800);
+		}
+		btn2.onclick = function(){
+			move(box1,"height",3,500);
+		}
+		btn3.onclick = function(){
+			move(box2,"top",10,500);
+		}
+		btn4.onclick = function(){
+			move(box2,"width",10,800,function(){
+				move(box2,"height",10,500,function(){
+					move(box2,"top",10,800,function(){
+						move(box2,"top",10,0,function(){
+							move(box2,"width",10,50,function(){
+								move(box2,"height",10,50)
+							})
+						})
+					})
+				})
+			});
+			
+		}
+		
+		
+
+		
+	</script>
+
+</html>

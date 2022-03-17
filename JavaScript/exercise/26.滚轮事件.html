@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#box1{
+			width: 100px;
+			height: 100px;
+			min-height: 20px;
+			background-color: #0086B3;
+		}
+		body{
+			height: 2000px;
+		}
+	</style>
+	<body>
+		<div id="box1">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box1 = document.getElementById("box1");
+		var obj = getComputedStyle(box1,null);
+		box1.addEventListener("wheel",function(event){
+			
+			//box1.style.height += event.deltaY + "px";
+			if(event.deltaY>0){
+				box1.style.height = box1.clientHeight + 5 +"px";
+			}else{
+				box1.style.height = box1.clientHeight - 5 +"px";
+			}
+			event.preventDefault();  //取消浏览器默认滚动
+		},false);
+		
+	</script>
+</html>

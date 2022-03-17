@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#areaDiv{
+			width: 500px;
+			height: 280px;
+			border: #000000 2px solid;
+		}
+		#showMsg{
+			margin-top: 35px;
+			width: 500px;
+			height: 50px;
+			font-size: 18px;
+			line-height: 50px;
+			border: #000000 1px solid;
+		}
+	</style>
+	<body>
+		<div id="areaDiv">
+			
+		</div>
+		<div id="showMsg">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*
+			当鼠标在areaDiv中移动时，在showMsg中显示坐标
+		*/ 
+	   
+	   var areaDiv =document.getElementById("areaDiv");
+	   var showMsg = document.getElementById("showMsg");
+	   
+	   areaDiv.onmousemove = function(event){
+		   event = event || window.event;   //解决事件对象兼容性问题
+		   
+		   var x = event.clientX;
+		   var y = event.clientY;
+		   
+		   showMsg.innerHTML = "x = "+x+" ,  y = "+y;
+		   
+	   }
+	   
+	</script>
+</html>

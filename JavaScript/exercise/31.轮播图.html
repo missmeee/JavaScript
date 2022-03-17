@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="./toos.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+	
+		div#img{
+			width:652px ;
+			height: 340px;
+			margin: 0 auto;
+			margin-top: 40px;
+			padding:10px 0;
+			position: relative;
+			overflow: hidden;
+			
+		}
+		ul#imglist{
+			width: 2000px; 
+			list-style: none;
+			position: relative;
+			left: 0;
+		}
+		#imglist li{
+			float: left;
+			margin: 0 10px;
+		}
+
+		#nvi{
+			position: absolute;
+			bottom: 15px;
+			right: 35px;
+		}
+
+		
+		#nvi a{
+			list-style: none;
+			float: left;
+			width: 15px;
+			height: 15px;
+			background-color: rgba(0,0,0,0.2);
+			margin: 5px;
+			border-radius: 50% ;
+		}
+	</style>
+	<body>
+		<div id="img">
+			<ul id="imglist">
+				<li><img src="../../css/mi/image/ad1.jpg" ></li>
+				<li><img src="../../css/mi/image/ad2.jpg" ></li>
+				<li><img src="../../css/mi/image/ad3.png" ></li>
+				<li><img src="../../css/mi/image/ad1.jpg" ></li>
+			</ul>
+			<div id="nvi">
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+		</div>
+		
+
+	</body>
+	
+	<script type="text/javascript">
+		var li = document.getElementsByTagName("li");
+		var ul = document.getElementById("imglist");
+		var index = 0
+		ul.style.width = li.length * 652 + "px";
+
+		var allA = document.getElementsByTagName("a");
+		
+		allA[index].style.backgroundColor = "rgba(0,0,0,0.6)";
+		
+		for(var i=0; i<allA.length; i++){
+			allA[i].num = i;
+			allA[i].onclick = function(){
+				clearInterval(timer);
+				index = this.num;
+				move(ul,"left",30,-652*index,function(){
+					autoChange();
+				});
+				//this.style.backgroundColor = "rgba(0,0,0,0.6)";
+				
+				setA();
+				
+			}
+		}
+		autoChange();
+		var timer;
+		function setA(){
+			if(index >= li.length - 1){
+				index = 0;
+				ul.style.left = 0;
+			}
+			
+			for(var i=0; i<allA.length; i++){
+				allA[i].style.backgroundColor = "";
+			}
+			allA[index].style.backgroundColor = "rgba(0,0,0,0.6)";
+		};
+		
+		
+		function autoChange(){
+			var speed = 30
+			timer = setInterval(function(){
+				index++;
+				index %= li.length;
+				// if(index == 0){
+				// 	speed = 1000;
+				// }else{
+				// 	speed = 20;
+				// }
+				move(ul,"left",speed,-652*index,function(){
+					setA();
+				});
+			},2500)
+			
+		}
+	</script>
+	
+</html>

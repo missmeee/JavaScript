@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: #0077AA;
+			position: absolute;
+		}
+	</style>
+	<body>
+		<div id="box1">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var box1 = document.getElementById("box1");
+		
+		box1.addEventListener("mousedown",function(event){
+			
+			 var left = event.offsetX;
+			 var top = event.offsetY;
+
+			document.onmousemove = function(event){
+				box1.style.left = (event.clientX - left)+"px";
+				box1.style.top = (event.clientY - top)+"px";
+			}
+			
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+				
+			}
+		},false);
+		
+
+		
+	</script>
+</html>

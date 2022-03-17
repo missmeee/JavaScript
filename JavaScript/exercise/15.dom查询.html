@@ -214,6 +214,34 @@
 		})
 		
 		//返回#username的value属性值
+		myClick("btn09",function(){
+			var user = document.getElementById("username");
+			
+			alert(user.value);
+			
+		})
+		
+		
+		//设置#username的value属性值
+		myClick("btn10",function(){
+			var user = document.getElementById("username");
+			user.value = "newValue";
+			//alert(user.value);
+			
+		})
+		
+		
+		//返回#bj的文本值
+		myClick("btn11",function(){
+			var bj = document.getElementById("bj");
+			
+			//alert(bj.innerText);
+			
+			//获取北京的文本节点
+			var fc = bj.firstChild;
+			 alert(fc.nodeValue);
+			
+		})
 		
 	</script>
 </html>
